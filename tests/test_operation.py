@@ -1,4 +1,4 @@
-'''My Tests for the Operation Class with Faker'''
+'''My Tests for the Operation Class'''
 from decimal import Decimal
 import pytest
 from faker import Faker
