@@ -1,0 +1,29 @@
+name: Initializing by Installing Dependencies and Running Tests
+
+on:
+    push:
+        branches: [ "main" ]
+    pull_request:
+        branches: [ "main" ]
+
+permissions:
+    contents: read
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Get repository code
+          uses: actions/checkout@v3
+        - name: Set up Python
+          uses: actions/setup-python@v3
+          with: 
+            python-version: 3.8
+        - name: Install my dependencies
+          run: |
+            pip install pytest pylint pytest-cov
+            pip install -r requirements.txt
+        - name: Test with pytest --pylint --cov
+          run: |
+            pytest --pylint --cov
