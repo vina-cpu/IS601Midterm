@@ -1,5 +1,4 @@
 '''My Tests for the Operation Class with Faker'''
-from typing import Callable, List
 from decimal import Decimal
 import pytest
 from faker import Faker
@@ -33,8 +32,11 @@ def test_divide():
     assert Operation.divide(12, 4) == 3
     a: Decimal = fake.random_number()
     b: Decimal = fake.random_number()
-    try:
+    if b != 0:
         assert Operation.divide(a, b) == a / b
-    except:
-        with pytest.raises(ValueError, match="Division by zero"):
-            Operation.divide(a, b)
+
+def test_divide_by_zero():
+    '''Test divide function with 0'''
+    a: Decimal = fake.random_number()
+    with pytest.raises(ValueError, match = "Division by zero"):
+        Operation.divide(a, 0)
