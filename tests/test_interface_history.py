@@ -5,9 +5,9 @@ from commands import Interface
 def run_interface(inputs, monkeypatch, capfd):
     '''Helper function for running an interface - to reduce redundancy'''
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    inter = Interface()
+    interface_history = Interface()
     with pytest.raises(SystemExit):
-        inter.start()
+        interface_history.start()
     captured = capfd.readouterr()
     return captured.out
 

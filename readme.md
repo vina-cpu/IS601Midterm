@@ -22,7 +22,6 @@ This is my calculator project. It has 10 different functions, including add, sub
 
 # Logging
 
+# Design Patterns
 
-
-## requirements
-1. 
+# LBYL and EAFP
