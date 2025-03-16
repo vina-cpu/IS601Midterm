@@ -12,7 +12,9 @@ class LoadCommand(Command):
         try:
             History.load_history(new_file)
             print(f"File {new_file} loaded!")
+            logging.info(f"File {new_file} loaded!")
         except Exception as e:
             print(f"An error occured: {e}")
+            logging.error(f"While attempting to load a history file, an error occured: {e}")
 
 command = LoadCommand()

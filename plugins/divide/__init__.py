@@ -1,3 +1,4 @@
+import logging
 from decimal import Decimal, InvalidOperation
 from calculator import Calculator
 from commands.command import Command
@@ -14,12 +15,16 @@ class DivideCommand(Command):
         try:
             num1, num2 = map(Decimal, [num1str, num2str])
             result = Calculator.divide(num1, num2)
+            logging.info(f"The result of {num1} divide {num2} is equal to {result}")
             print(f"The result of {num1} divide {num2} is equal to {result}")
         except InvalidOperation:
-            print(f"Invalid number input: {num1str} or {num2str} is not a valid number.")     
+            print(f"Invalid number input: {num1str} or {num2str} is not a valid number.")
+            logging.error(f"Invalid number input: {num1str} or {num2str} is not a valid number.")   
         except ValueError:
             print("An error occured: Cannot divide by zero")
+            logging.error("An error occured: Cannot divide by zero")
         except Exception as e: #line missed in cov - don't know how to test this
             print(f"An error occured: {e}") #line missed in cov - don't know how to test this
+            logging.error(f"While attempting to divide, an error occured: {e}")
 
 command = DivideCommand()

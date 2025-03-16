@@ -16,8 +16,9 @@ class MenuCommand(Command):
                 module = importlib.import_module(f"plugins.{name}.__init__")
                 if hasattr(module, "command"):
                     print(module.command.description)
-            
+            logging.info("Menu printed successfully")            
         except Exception as e:
-            print(f"An error occured: {e}")
+            logging.error(f"An error occured: {e}")
+            print(f"While attempting to view menu, an error occured: {e}")
 
 command = MenuCommand()

@@ -7,8 +7,8 @@ from commands.command import CommandHandler
 class Interface:
     def __init__(self):
         load_dotenv()
-        self.logging_level = self.load_env("LOG_LEVEL") # saving my environment variable to where to save log files
-        self.logging_destination = self.load_env("LOG_DESTINATION")
+        self.logging_level = self.load_env("LOG_LEVEL", default = "INFO") # saving my environment variable to where to save log files
+        self.logging_destination = self.load_env("LOG_DESTINATION", default = "logs")
         self.configure_logging(self.logging_level, self.logging_destination)
         self.commandHandler = CommandHandler()
     
@@ -29,8 +29,8 @@ class Interface:
         )
         logging.info("Logging configured, environment variables loaded!")
     
-    def load_env(self, reference_key):
-        key: str = os.getenv(reference_key)
+    def load_env(self, reference_key, default = None):
+        key: str = os.getenv(reference_key, default)
         return key
     
     def get_env(self, reference_key) -> str:

@@ -9,7 +9,9 @@ class SaveCommand(Command):
         print(f"Saving a new file of the current history to 'saves' now ... ")
         try:
             History.save_history()
+            logging.info("New history saved to file, see 'saves' folder")
         except Exception as e:
             print(f"An error occured: {e}")
+            logging.error(f"While attempting to save, an error occured: {e}")
 
 command = SaveCommand()

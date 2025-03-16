@@ -7,6 +7,8 @@ def test_exists_save_file():
     '''Test to show at least one file is in saves folder'''
     # adding files in saves down to the minute, don't want to test by number of files here
     # ran this outside of pytest so that there is at least one
+    # cov is low for save plugin; could test that saving a file does save a file,
+    # but i don't want to save a file every time i run pytest
     assert any(Path("saves").iterdir()) is True
 
 def test_load_file(capfd, monkeypatch):

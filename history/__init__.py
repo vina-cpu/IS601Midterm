@@ -35,4 +35,4 @@ class History:
     @classmethod
     def delete_index(cls, i: str):
         cls.hist = cls.hist.drop(index = i)
-        cls.hist.reset_index(drop = True) #deletes a row and resets the index
+        cls.hist = cls.hist.reset_index(drop = True) #deletes a row and resets the index

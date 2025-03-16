@@ -9,7 +9,9 @@ class ClearCommand(Command):
         try:
             History.clear_history()
             print("History cleared!")
+            logging.info("History cleared")
         except Exception as e:
             print(f"An error occured: {e}")
+            logging.error(f"While attempting to clear history, an error occured: {e}")
 
 command = ClearCommand()
