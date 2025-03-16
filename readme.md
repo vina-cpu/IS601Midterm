@@ -19,9 +19,9 @@ This is my calculator project. It has 10 different functions, including add, sub
 -note about environment variables: i obviously did not publish this onto github but it does pass with the logs on my local environment
 
 # Environment Variables
-In this project I used environment variables to initialize a log level and a log destination, so you can specify where to save the logs and what level you want the logs to initialize at. I utilized this in the Interface class in the commands package, as part of using my command design pattern.
-## Link for environment variables usage:
-https://github.com/vina-cpu/IS601Midterm/blob/main/commands/__init__.py
+In this project I used environment variables to initialize a log level and a log destination, so you can specify where to save the logs and what level you want the logs to initialize at. I utilized this in the Interface class in the commands package, as part of using my command design pattern.  
+Link for environment variables usage:  
+https://github.com/vina-cpu/IS601Midterm/blob/main/commands/__init__.py  
 
 # Logging
 In this project I used logging to log various things that happen and various errors I might encounter. I used logging.info to show things that happen, and logging.error to differentiate that something went wrong in my program and I want to document what and when it happened. I configured logging so that there would be a default place where it would be saved per the program, but you can also specify your own location or level to log at besides the default configurations. I utilized logging in all of my plugins to show where everything was happening. Obviously, running from the main function, you will use logging, but since it's not being imported in main.py I will not include that as a link.  
