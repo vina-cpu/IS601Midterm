@@ -21,6 +21,8 @@ reports=yes
 # Put a full report at the end of the file
 report-full=no
 
+min-similarity-lines=10
+
 [DESIGN]
 # Maximum number of parents for a class (see R0901).
 max-parents=15
