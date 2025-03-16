@@ -8,7 +8,7 @@ class Interface:
     def __init__(self):
         self.configure_logging()
         load_dotenv()
-        logging.read_csv_loc = self.loadEnv() # saving my environment variable to where to read csvs for this 
+        #logging.write_loc = self.load_env() # saving my environment variable to where to save log files
         self.commandHandler = CommandHandler()
     
     @staticmethod
@@ -36,7 +36,7 @@ class Interface:
         return self.myEnvironment
 
     def start(self):
-        print("Hello! Type calculator commands to utilize the calculator, type 'menu' for a full list of commands, or type 'exit' to exit!")
+        print("Hello! Type calculator commands to utilize the calculator, type 'menu' for a full list of commands including saving and loading, or type 'exit' to exit!")
         self.commandHandler.load_commands()
         while True:
             self.commandHandler.execute_command(input(">>> ").strip())     
