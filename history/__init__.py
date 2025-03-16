@@ -17,17 +17,22 @@ class History:
         return cls.hist
 
     @classmethod
-    def load_history(cls, hist, path: str): # going to be in same file as environment variable
+    def load_history(cls, path: str): # going to be in same file as environment variable
         new_data = pd.read_csv(path)
-        hist = pd.concat([hist, new_data], ignore_index = True)
+        cls.hist = pd.concat([cls.hist, new_data], ignore_index = True)
 
     @classmethod
-    def save_history(cls, hist):
+    def save_history(cls):
         save_dir = "saves"
         os.makedirs(save_dir, exist_ok = True)
         save_file = os.path.join(save_dir, datetime.now().strftime("%m.%d.%H.%M.log"))
-               
-        
+        cls.hist.to_csv(save_file, index = False)
+                
     @classmethod
     def clear_history(cls):
         cls.hist = pd.DataFrame(columns = ["Num 1", "Num 2", "Operation", "Result"])
+    
+    @classmethod
+    def delete_index(cls, index: int):
+        cls.hist.drop(index, inplace = True)
+        cls.hist.reset_index(drop = True, inplace = True) #deletes a row and resets the index
