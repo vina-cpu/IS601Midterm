@@ -23,10 +23,10 @@ class History:
 
     @classmethod
     def save_history(cls, hist):
-        save_dir = "logs"
+        save_dir = "saves"
         os.makedirs(save_dir, exist_ok = True)
         save_file = os.path.join(save_dir, datetime.now().strftime("%m.%d.%H.%M.log"))
-        
+               
         
     @classmethod
     def clear_history(cls):
