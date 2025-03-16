@@ -20,3 +20,13 @@ def test_load_file(capfd, monkeypatch):
         inter.start()
     captured = capfd.readouterr()
     assert "-1354" in captured.out # used a unique number in my input here to see if this specific file was loaded correctly
+
+def test_load_wrong_file(capfd, monkeypatch):
+    '''Test to show loading file from wrong directory doesn't crash my program'''
+    inputs = iter(['clear', 'load', '', 'look', 'exit'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    inter = Interface()
+    with pytest.raises(SystemExit):
+        inter.start()
+    captured = capfd.readouterr()
+    assert "An error occured: [Errno 2] No such file or directory: ''" in captured.out # used a unique number in my input here to see if this specific file was loaded correctly
