@@ -6,11 +6,11 @@ from typing import Callable, List
 from calculator.calculation import Calculation
 
 class History:
-    hist: pd.DataFrame[Calculation] = pd.DataFrame(columns = ["Num 1", "Num 2", "Operation", "Result"])
+    hist = pd.DataFrame(columns = ["Num 1", "Num 2", "Operation", "Result"])
 
     @classmethod
     def append_calc(cls, calc: Calculation):
-        cls.hist.loc[len(cls.hist)] = [calc.get_a(), calc.get_b(), calc.get_oper(), calc.do()]
+        cls.hist.loc[len(cls.hist)] = [calc.get_a(), calc.get_b(), calc.get_operation(), calc.do()]
 
     @classmethod
     def get_history(cls) -> List[Calculation]:

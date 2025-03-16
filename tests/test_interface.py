@@ -113,3 +113,25 @@ def test_interface_start_divide_divide_zero(capfd, monkeypatch):
         inter.start()
     captured = capfd.readouterr()
     assert "An error occured: Cannot divide by zero" in captured.out
+
+def test_interface_start_clear_empty(capfd, monkeypatch):
+    '''Test that REPL can handle clearing history correctly'''
+    inputs = iter(['clear', 'exit'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    inter = Interface()
+    with pytest.raises(SystemExit):
+        inter.start()
+    captured = capfd.readouterr()
+    assert "Clearing history now ... " in captured.out
+    assert "History cleared!" in captured.out
+
+def test_interface_start_clear_full(capfd, monkeypatch):
+    '''Test that the REPL can handle clearing history correctly'''
+    inputs = iter(['add', '1', '2', 'clear', 'exit'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    inter = Interface()
+    with pytest.raises(SystemExit):
+        inter.start()
+    captured = capfd.readouterr()
+    assert "Clearing history now ... " in captured.out
+    assert "History cleared!" in captured.out
