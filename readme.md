@@ -13,7 +13,8 @@
   
 # Description  
 This is my calculator project. It has 10 different functions, including add, subtract, multiply, and divide. It has some history functionality utilizing pandas such as storing history in a pandas dataframe, adding history, deleting a row of history, clearing the whole history, loading history from a .csv file, looking at the current history in the command line without saving (so you can see what you're doing when you delete or clear history),and saving history to a unique .csv files in a 'saves' folder. This project also has logging, so it will take your specific environment variables (in a .env file) and load logging so that it logs to a path you specify. I also made it compatible with some default variables so that if you don't specify any environment variables the logging will still work.  
-  
+
+-note with cov: my overall coverage with the tests i did not put on github to run in actions is 95%, even though it's showing up as 92% in the build    
 -note about build and testing, had to make it ignore log, environment, saving, and loading, because i didn't push those things (for obvious reasons), but they do pass on my local environment  
 -note about environment variables: i obviously did not publish this onto github but it does pass with the variables on my local environment  
 -note: most of my loss of coverage is due to the exception cases for generic cases not being covered in the tests; i tested everything i could and planned for, but i didn't find it worthwhile to test for a generic error, especially when that exact code works for some errors (such as in load_history() and the test for it); felt like it would crowd my test cases    
