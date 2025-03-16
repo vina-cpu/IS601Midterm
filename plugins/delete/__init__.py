@@ -12,8 +12,6 @@ class DeleteCommand(Command):
             num = map(int, index)
             History.delete_index(num)
             print(f"Index {index} deleted!")
-        except InvalidOperation:
-            print(f"Invalid number input: {num} is not a valid number.")
         except Exception as e:
             print(f"An error occured: {e}")
 
