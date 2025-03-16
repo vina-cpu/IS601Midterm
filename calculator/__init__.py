@@ -14,7 +14,7 @@ class Calculator:
     @staticmethod
     def add(a: Decimal, b: Decimal):
         return Calculator.new(a, b, Operation.add)
-    
+
     @staticmethod
     def subtract(a: Decimal, b: Decimal) -> Decimal:
         return Calculator.new(a, b, Operation.subtract)
