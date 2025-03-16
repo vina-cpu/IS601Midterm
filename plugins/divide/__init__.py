@@ -3,6 +3,8 @@ from calculator import Calculator
 from commands.command import Command
 
 class DivideCommand(Command):
+    description = "Type 'divide' to divide two numbers"
+    
     def execute(self):
         print("What is your first number:")
         num1str: str = input(">>> ").strip()

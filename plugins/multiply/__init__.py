@@ -3,6 +3,8 @@ from calculator import Calculator
 from commands.command import Command
 
 class MultiplyCommand(Command):
+    description = "Type 'multiply' to multiply two numbers"
+    
     def execute(self):
         print("What is your first number:")
         num1str: str = input(">>> ").strip()

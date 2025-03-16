@@ -3,6 +3,7 @@ from calculator import Calculator
 from commands.command import Command
 
 class SubtractCommand(Command):
+    description = "Type 'subtract' to subtract one number from another"
     def execute(self):
         print("What is your first number:")
         num1str: str = input(">>> ").strip()

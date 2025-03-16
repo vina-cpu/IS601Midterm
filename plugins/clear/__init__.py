@@ -3,6 +3,7 @@ from history import History
 from commands.command import Command
 
 class ClearCommand(Command):
+    description = "Type 'clear' to clear the calculator's history"
     def execute(self):
         print("Clearing history now ... ")
         try:

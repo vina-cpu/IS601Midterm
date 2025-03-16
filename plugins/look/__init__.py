@@ -2,6 +2,8 @@ from history import History
 from commands.command import Command
 
 class LookCommand(Command):
+    description = "Type 'look' to look at the current history without saving it"
+    
     def execute(self):
         print("Fetching history ... ")
         try:

@@ -4,6 +4,8 @@ from history import History
 from commands.command import Command
 
 class DeleteCommand(Command):
+    description = "Type 'delete' to be asked for an index in the history to delete"
+    
     def execute(self):
         print("What index would you like to delete:")
         index: str = input(">>> ").strip()

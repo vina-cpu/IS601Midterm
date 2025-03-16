@@ -68,8 +68,22 @@ def test_interface_start_delete_empty(capfd, monkeypatch):
     captured = capfd.readouterr()
     assert "An error occured: '[0] not found in axis'" in captured.out
 
-#def test_exists_save_file(): - THIS TEST IS IN test_log_and_env because i wanted to ignore it in git actions and building
-#    '''Test to show at least one file is in saves folder'''
-    # adding files in saves down to the minute, don't want to test by number of files here
-    # ran this outside of pytest so that there is at least one
-#    assert any(Path("saves").iterdir()) is True
+def test_interface_start_menu(capfd, monkeypatch):
+    '''Test that the REPL dynamically prints a menu'''
+    inputs = iter(['menu', 'exit'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    inter = Interface()
+    with pytest.raises(SystemExit):
+        inter.start()
+    captured = capfd.readouterr()
+    assert "Type 'add' to add two numbers" in captured.out
+    assert "Type 'clear' to clear the calculator's history" in captured.out
+    assert "Type 'delete' to be asked for an index in the history to delete" in captured.out
+    assert "Type 'divide' to divide two numbers" in captured.out
+    assert "Type 'exit' to exit the program" in captured.out
+    assert "Type 'load' to load a history located in a .csv file: be sure to know where your file is!" in captured.out
+    assert "Type 'look' to look at the current history without saving it" in captured.out
+    assert "Type 'menu' to look at the menu of commands" in captured.out
+    assert "Type 'multiply' to multiply two numbers" in captured.out
+    assert "Type 'save' to save the current history into a new file in the 'saves' folder; if the 'saves' folder does not exist, this will also create the 'saves' folder" in captured.out
+    assert "Type 'subtract' to subtract one number from another" in captured.out
