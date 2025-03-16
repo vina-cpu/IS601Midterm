@@ -10,7 +10,7 @@ class History:
 
     @classmethod
     def append_calc(cls, calc: Calculation):
-        cls.hist.loc[len(cls.hist)] = [calc.get_a(), calc.get_b(), calc.get_operation(), calc.do()]
+        cls.hist.loc[len(cls.hist)] = [calc.get_a(), calc.get_b(), calc.get_operation().__name__, calc.do()]
 
     @classmethod
     def get_history(cls) -> List[Calculation]:
@@ -33,6 +33,6 @@ class History:
         cls.hist = pd.DataFrame(columns = ["Num 1", "Num 2", "Operation", "Result"])
     
     @classmethod
-    def delete_index(cls, index: int):
-        cls.hist.drop(index, inplace = True)
-        cls.hist.reset_index(drop = True, inplace = True) #deletes a row and resets the index
+    def delete_index(cls, i: str):
+        cls.hist.drop(index = i)
+        cls.hist.reset_index(drop = True) #deletes a row and resets the index

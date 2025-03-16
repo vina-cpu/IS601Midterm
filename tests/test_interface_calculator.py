@@ -1,24 +1,6 @@
-'''Tests for Testing Commands with Interface'''
+'''Tests for Testing Calculator Commands with Interface'''
 import pytest
 from commands import Interface
-
-def test_interface_start_exit_command(capsys, monkeypatch):
-    '''Test that the REPL exits with 'exit' input''' 
-    #this is SIMULATING USER
-    monkeypatch.setattr('builtins.input', lambda _: 'exit')
-    inter = Interface()
-    with pytest.raises(SystemExit):
-        inter.start()
-
-def test_interface_start_no_command(capfd, monkeypatch):
-    '''Test that the REPL doesn't explode if i put in something other than a command it knows'''
-    inputs = iter(['unknown command', 'exit'])
-    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    inter = Interface()
-    with pytest.raises(SystemExit):
-        inter.start()
-    captured = capfd.readouterr()
-    assert "No such command: unknown command" in captured.out
 
 def test_interface_start_add_command(capfd, monkeypatch):
     '''Test that the REPL can add'''
@@ -113,25 +95,3 @@ def test_interface_start_divide_divide_zero(capfd, monkeypatch):
         inter.start()
     captured = capfd.readouterr()
     assert "An error occured: Cannot divide by zero" in captured.out
-
-def test_interface_start_clear_empty(capfd, monkeypatch):
-    '''Test that REPL can handle clearing history correctly'''
-    inputs = iter(['clear', 'exit'])
-    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    inter = Interface()
-    with pytest.raises(SystemExit):
-        inter.start()
-    captured = capfd.readouterr()
-    assert "Clearing history now ... " in captured.out
-    assert "History cleared!" in captured.out
-
-def test_interface_start_clear_full(capfd, monkeypatch):
-    '''Test that the REPL can handle clearing history correctly'''
-    inputs = iter(['add', '1', '2', 'clear', 'exit'])
-    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    inter = Interface()
-    with pytest.raises(SystemExit):
-        inter.start()
-    captured = capfd.readouterr()
-    assert "Clearing history now ... " in captured.out
-    assert "History cleared!" in captured.out

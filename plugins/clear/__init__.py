@@ -1,5 +1,4 @@
-from decimal import Decimal, InvalidOperation
-from calculator import Calculator
+import logging
 from history import History
 from commands.command import Command
 
