@@ -3,13 +3,12 @@ import logging
 from dotenv import load_dotenv
 from datetime import datetime
 from commands.command import CommandHandler
-from history import History
 
 class Interface:
     def __init__(self):
         self.configure_logging()
         load_dotenv()
-        History.read_csv_loc = self.loadEnv() # saving my environment variable to where to read csvs for this 
+        logging.read_csv_loc = self.loadEnv() # saving my environment variable to where to read csvs for this 
         self.commandHandler = CommandHandler()
     
     @staticmethod
