@@ -5,13 +5,9 @@ from commands.command import Command
 
 class SaveCommand(Command):
     def execute(self):
-        print("What index would you like to delete:")
-        index: str = input(">>> ").strip()
-        print(f"Deleting index {index} now ... ")
+        print(f"Saving a new file of the current history to 'saves' now ... ")
         try:
-            num = map(int, index)
-            History.delete_index(num)
-            print(f"Index {index} deleted!")
+            History.save_history()
         except Exception as e:
             print(f"An error occured: {e}")
 

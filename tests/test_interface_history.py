@@ -1,4 +1,4 @@
-'''Tests for Testing History and Exit/Menu Commands with Interface'''
+'''Tests for Testing History and Exit/Menu Commands with Interface - without Save b/c I want to ignore that file in github actions - it is in log and env tests'''
 import pytest
 from commands import Interface
 
@@ -67,3 +67,9 @@ def test_interface_start_delete_empty(capfd, monkeypatch):
         inter.start()
     captured = capfd.readouterr()
     assert "An error occured: '[0] not found in axis'" in captured.out
+
+#def test_exists_save_file(): - THIS TEST IS IN test_log_and_env because i wanted to ignore it in git actions and building
+#    '''Test to show at least one file is in saves folder'''
+    # adding files in saves down to the minute, don't want to test by number of files here
+    # ran this outside of pytest so that there is at least one
+#    assert any(Path("saves").iterdir()) is True

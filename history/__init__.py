@@ -25,7 +25,7 @@ class History:
     def save_history(cls):
         save_dir = "saves"
         os.makedirs(save_dir, exist_ok = True)
-        save_file = os.path.join(save_dir, datetime.now().strftime("%m.%d.%H.%M.log"))
+        save_file = os.path.join(save_dir, datetime.now().strftime("%m.%d.%H.%M.csv"))
         cls.hist.to_csv(save_file, index = False)
                 
     @classmethod
