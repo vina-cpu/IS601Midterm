@@ -20,29 +20,29 @@ This is my calculator project. It has 10 different functions, including add, sub
 
 # Environment Variables
 In this project I used environment variables to initialize a log level and a log destination, so you can specify where to save the logs and what level you want the logs to initialize at. I utilized this in the Interface class in the commands package, as part of using my command design pattern.
-## Link:
+## Link for environment variables usage:
 https://github.com/vina-cpu/IS601Midterm/blob/main/commands/__init__.py
 
 # Logging
-In this project I used logging to log various things that happen and various errors I might encounter. I used logging.info to show things that happen, and logging.error to differentiate that something went wrong in my program and I want to document what and when it happened. I configured logging so that there would be a default place where it would be saved per the program, but you can also specify your own location or level to log at besides the default configurations. I utilized logging in all of my plugins to show where everything was happening. Obviously, running from the main function, you will use logging, but since it's not being imported in main.py I will not include that as a link.
-## Link to where logging is initialized:
-https://github.com/vina-cpu/IS601Midterm/blob/main/commands/__init__.py
-## Link to where logging is tested:
-https://github.com/vina-cpu/IS601Midterm/blob/main/tests/test_log_and_env.py
-## Links to where logging is used:
-https://github.com/vina-cpu/IS601Midterm/blob/main/commands/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/commands/command.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/add/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/clear/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/delete/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/divide/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/exit/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/load/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/look/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/menu/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/multiply/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/save/__init__.py
-https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/subtract/__init__.py
+In this project I used logging to log various things that happen and various errors I might encounter. I used logging.info to show things that happen, and logging.error to differentiate that something went wrong in my program and I want to document what and when it happened. I configured logging so that there would be a default place where it would be saved per the program, but you can also specify your own location or level to log at besides the default configurations. I utilized logging in all of my plugins to show where everything was happening. Obviously, running from the main function, you will use logging, but since it's not being imported in main.py I will not include that as a link.  
+Link to where logging is initialized:  
+https://github.com/vina-cpu/IS601Midterm/blob/main/commands/__init__.py  
+Link to where logging is tested:  
+https://github.com/vina-cpu/IS601Midterm/blob/main/tests/test_log_and_env.py  
+Links to where logging is used:    
+https://github.com/vina-cpu/IS601Midterm/blob/main/commands/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/commands/command.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/add/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/clear/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/delete/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/divide/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/exit/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/load/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/look/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/menu/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/multiply/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/save/__init__.py  
+https://github.com/vina-cpu/IS601Midterm/blob/main/plugins/subtract/__init__.py  
 
 # Design Patterns
 ##
