@@ -13,7 +13,7 @@ class History:
         cls.hist.loc[len(cls.hist)] = [calc.get_a(), calc.get_b(), calc.get_operation().__name__, calc.do()]
 
     @classmethod
-    def get_history(cls) -> List[Calculation]:
+    def get_history(cls) -> pd.DataFrame:
         return cls.hist
 
     @classmethod
