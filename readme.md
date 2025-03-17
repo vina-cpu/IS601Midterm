@@ -133,7 +133,7 @@ https://github.com/vina-cpu/IS601Midterm/blob/main/tests/test_interface_history.
 https://github.com/vina-cpu/IS601Midterm/blob/main/tests/test_save_and_load.py  
 # Video  
 My video is 9 minutes long, I explained some of the things I did and went a little over; if you want to see me purely showing you the code and what it can do, please skip to 5:00 minutes in the video because I have roughly 5 minutes of me just going through all the commands!  
-Also you'll have to download the video to watch it, I for me it's showing "View raw" to download, there's also a "Raw" button in the top right inside the code rectangle that also works for downloading this video!  
+Also you'll have to download the video to watch it, I for me it's showing "View raw" to download, there's also a "Raw" button and a download symbol in the top right inside the code rectangle that also works for downloading this video!  
 Link:  
 https://github.com/vina-cpu/IS601Midterm/blob/main/IS601MidtermVideo.mp4
 
